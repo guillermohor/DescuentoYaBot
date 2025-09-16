@@ -3,71 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DescuentoYa Bot</title>
+    <title>DescuentoYa Bot - Tu Asistente de Ofertas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --primary: #4a6baf;
+            --secondary: #4CAF50;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
             color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), #6c5ce7);
+            color: white;
+            padding: 60px 0;
             text-align: center;
         }
-        .header {
-            padding: 40px 0;
-            background: #4a6baf;
-            color: white;
-            border-radius: 5px;
-            margin-bottom: 30px;
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
-        .bot-button {
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .btn {
             display: inline-block;
-            background: #4CAF50;
+            background: var(--secondary);
             color: white;
             padding: 15px 30px;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin: 20px 0;
-            transition: background 0.3s;
-            font-size: 1.2em;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin: 10px 5px;
         }
-        .bot-button:hover {
-            background: #3e8e41;
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .redirect-message {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-left: 5px solid #4a6baf;
-            text-align: left;
+        .btn-telegram {
+            background: #0088cc;
+        }
+        /* Secciones */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        /* Tarjetas de características */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        /* Sección de políticas */
+        .policy {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .disclaimer {
+            max-width: 800px;
+            margin: 20px auto;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .logo { font-size: 2rem; }
+            .tagline { font-size: 1.2rem; }
+            .section-title h2 { font-size: 2rem; }
+            section { padding: 60px 0; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>DescuentoYa Bot</h1>
-        <p>Redirigiendo a la nueva ubicación del bot...</p>
-    </div>
-
-    <div class="redirect-message">
-        <h2>¡Hola! Estás siendo redirigido a DescuentoYa Bot</h2>
-        <p>Si la redirección no funciona automáticamente, haz clic en el botón de abajo:</p>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="https://t.me/DescuentoYaBot" class="bot-button">✨ Ir a DescuentoYa Bot</a>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">DescuentoYa Bot</h1>
+            <p class="tagline">Tu asistente personal para encontrar ofertas</p>
+            <a href="https://t.me/DescuentoYaBot" class="btn btn-telegram">
+                <i class="fab fa-telegram"></i> Abrir en Telegram
+            </a>
         </div>
-    </div>
+    </header>
 
-    <script>
-        // Redirigir automáticamente después de 2 segundos
-        setTimeout(function() {
-            window.location.href = "https://t.me/DescuentoYaBot";
-        }, 2000);
-    </script>
+    <!-- Qué es el bot -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Qué es DescuentoYa Bot?</h2>
+                <p>Una herramienta inteligente para ahorrar en tus compras</p>
+            </div>
+            
+            <p>DescuentoYa Bot es un asistente de Telegram que te ayuda a encontrar las mejores ofertas en productos de tus marcas favoritas. Nuestro objetivo es facilitarte el ahorro en tus compras diarias.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Búsqueda Inteligente</h3>
+                    <p>Encuentra productos por categoría, precio o tendencias.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Alertas Personalizadas</h3>
+                    <p>Recibe notificaciones cuando los productos bajen de precio.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Seguimiento de Precios</h3>
+                    <p>Visualiza el historial de precios de los productos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer style="margin-top: 50px; text-align: center; color: #666; font-size: 0.9em;">
-        <p>© 2025 DescuentoYa Bot - Todos los derechos reservados</p>
+    <!-- Cómo funciona -->
+    <section style="background: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Cómo Funciona?</h2>
+                <p>Fácil, rápido y sin complicaciones</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div style="display: flex; justify-content: space-between; margin: 40px 0; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 150px; margin: 10px; padding: 20px;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">1</div>
+                        <h3>Inicia el Bot</h3>
+                        <p>Busca @DescuentoYaBot en Telegram</p>
+                    </div>
+                    <div style="flex: 1; min-width: 150px; margin: 10px; padding: 20px;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">2</div>
+                        <h3>Configura tus Alertas</h3>
+                        <p>Elige los productos que te interesan</p>
+                    </div>
+                    <div style="flex: 1; min-width: 150px; margin: 10px; padding: 20px;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">3</div>
+                        <h3>Ahorra Dinero</h3>
+                        <p>Recibe notificaciones con las mejores ofertas</p>
+                    </div>
+                </div>
+                
+                <a href="https://t.me/DescuentoYaBot" class="btn" style="background: var(--primary);">
+                    <i class="fab fa-telegram"></i> Comenzar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Políticas y Avisos Legales -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Información Importante</h2>
+                <p>Transparencia y cumplimiento legal</p>
+            </div>
+            
+            <div class="policy">
+                <h3>Política de Privacidad</h3>
+                <p>Respetamos tu privacidad. Solo recopilamos la información necesaria para proporcionarte el servicio. No compartimos tus datos personales con terceros sin tu consentimiento.</p>
+                
+                <h3>Uso de Enlaces de Afiliado</h3>
+                <p>Como Asociado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables. Esto no tiene ningún costo adicional para ti y nos ayuda a mantener el servicio.</p>
+                
+                <h3>Exención de Responsabilidad</h3>
+                <p>Los precios y disponibilidad de los productos están sujetos a cambios. Hacemos todo lo posible por mantener la información actualizada, pero no podemos garantizar la exactitud en todo momento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 DescuentoYa Bot. Todos los derechos reservados.</p>
+            
+            <div class="disclaimer">
+                <p><strong>Nota:</strong> Este sitio no está afiliado ni respaldado por Amazon.com, Inc. o sus afiliados. Amazon, el logotipo de Amazon, AmazonSupply y el logotipo de AmazonSupply son marcas comerciales de Amazon.com, Inc. o sus afiliados.</p>
+                <p>Como Asociado de Amazon, gano por las compras que cumplan los requisitos aplicables.</p>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a href="#" style="color: rgba(255,255,255,0.7); margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Términos de Uso</a>
+                <a href="#" style="color: rgba(255,255,255,0.7); margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Política de Privacidad</a>
+                <a href="#" style="color: rgba(255,255,255,0.7); margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Contacto</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
